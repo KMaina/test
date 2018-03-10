@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from '_form_macro.html' import render_settings_form %}
+{% block content %}
+<a href="{{url_for('home')}}">Back to index</a>
+<form action="" method="post">
+    {{ render_settings_form(settingsform.oname) }}
+    {{ render_settings_form(settingsform.email) }}
+    {{ render_settings_form(settingsform.address) }}
+    {{ render_settings_form(settingsform.tel) }}
+    {{ render_settings_form(settingsform.PIN) }}
+    {{ render_settings_form(settingsform.VAT) }}
+    <button type="submit" class="btn btn-default">SAVE</button>
+</form>
+{% endblock %}

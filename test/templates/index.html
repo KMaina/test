@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% from "_form_macro.html" import render_form %}
+{% block content %}
+<form action="" method="post">
+    {{ render_form(form.username) }}  
+    {{ render_form(form.password) }} 
+    <button type="submit" class="btn btn-default">LOGIN</button>
+</form>
+<small>developed by: +254 712 249 175</small>
+<small>Version 1.0.0</small>
+{% endblock %}

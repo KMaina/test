@@ -1,0 +1,32 @@
+{% macro render_form(field) %}
+    <div class="form-group">
+        {{ field.label }}
+    </div>
+    <div class="form-group">
+        {{ field(class_='form-control', placeholder=field.label.text, **kwargs)|safe }}
+    </div>
+{% endmacro %}
+
+{% macro render_settings_form(field) %}
+    <div class="form-group">
+        {{ field.label }}
+        {{ field(class_='form-control', placeholder=field.label.text, **kwargs)|safe }}
+    </div>
+{% endmacro %}
+
+{% macro render_new_user(field) %}
+    <div class="form-group">
+        {% if field.type == 'StringField' %}
+        {{ field.label }}
+        {{ field(class_='form-control', placeholder=field.label.text, **kwargs)|safe }}
+        {% endif %}
+        {% if field.type == 'BooleanField' %}
+        <div class="checkbox">
+            <label>
+                {{ field(class_=class_, **kwargs) }}
+                {{ field.label.text|safe }}
+            </label>
+        </div>
+        {% endif %}
+    </div>
+{% endmacro %}

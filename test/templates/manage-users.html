@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table">
+    <tr>
+        <th>Username</th>
+        <th>Admin</th>
+    </tr>
+    {% for info in infos %}
+    <tr>
+        <td>{{ info.name }}</td>
+        {% if info.admin == 1 %}
+        <td>admin</td>
+        {% else %}
+        <td>User</td>
+        {% endif %}
+    </tr>    
+    {% endfor %}
+</table>
+
+
+<a href="{{url_for('add_user')}}" class="btn btn-default">Add User</a>
+<a href="{{url_for('delete_user')}}" class="btn btn-default">Delete user</a>
+{% endblock %}
